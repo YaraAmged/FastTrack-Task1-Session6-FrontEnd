@@ -29,6 +29,9 @@ $primary-color: var(--primary-color);
   }
 }
 body {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Cairo";
   font-size: 16px;
   --primary-color: #{$purple};
   &.green-theme {
@@ -52,7 +55,6 @@ h2 {
   }
   .nav-link {
     font-weight: 600;
-    font-family: $MaxArabicFont;
     color: black;
   }
 
@@ -62,7 +64,7 @@ h2 {
       width: 46px;
       height: 46px;
       border-radius: 100%;
-      &.purple-button{
+      &.purple-button {
         background-color: $purple;
       }
       &.green-button {
@@ -84,13 +86,11 @@ h2 {
   background-color: $primary-color;
   .title-wrapper {
     color: $white;
-    height: min( 632.14px,calc( 100vh - 100px));
+    height: min(632.14px, calc(100vh - 100px));
 
     .title-container {
       width: 651px;
-      font-family: "Cairo";
-      font-style: normal;
-      font-weight: 400;
+
       h1 {
         font-size: 56px;
       }
@@ -108,8 +108,79 @@ h2 {
     filter: grayscale(100%);
   }
 }
+.section2 {
+  margin-top: 77px;
+  .p1 {
+    font-size: 40px;
+  }
+  .imagelay {
+    z-index: 3;
+  }
+  .underlay {
+    width: 332px;
+    height: 326px;
+    left: calc(47% - 332px / 2 - 92px);
+    bottom: -50px;
+    background: #e1d9e6;
+    opacity: 0.3;
+    border-radius: 20px;
+  }
+}
+.section3 {
+  margin-top: 105px;
+  .card {
+    .card-header {
+      border-radius: 0;
+    }
+    border: none;
+    border-radius: 0;
+    font-family: $MaxArabicFont;
+    padding: 0;
+    width: 278px;
+    background-color: #fafafa;
+    p {
+      margin-top: 30px;
+    }
+    .title {
+      background-color: $primary-color;
+      color: $white;
+      h1 {
+        font-weight: 700;
+        font-size: 24px;
+      }
+    }
+  }
+}
+.section4 {
+  padding: 0;
+  margin-top: 100px;
+  font-size: 18px;
+  div {
+    h1 {
+      font-size: 40px;
+    }
+    width: 808px;
+    gap: 26px;
+  }
+}
+
+.wrapper-lay {
+  position: absolute;
+  width: 824px;
+  height: 962px;
+  background-color: #e1d9e6;
+  left: calc(50% - 824px / 2 - 33px);
+  top: 20px;
+  border-radius: 30px;
+  opacity: 0.2;
+}
 #features-wrapper {
-  & > div {
+  position: relative;
+  padding-bottom: 50px;
+  margin-top: 80px;
+  z-index: 3;
+  .feature-card {
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -117,6 +188,7 @@ h2 {
     border-radius: 30px;
     height: 426px;
     padding-top: 30px;
+    background: white;
     div {
       display: flex;
       width: 100px;

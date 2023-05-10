@@ -6,16 +6,22 @@ var cards = [
       "بالإضافة إلي استقلاليتنا في دراية ,فقد طورنا العديد من الآليات الحصرية التي تساعد المستثمر علي تكوين محافظ متنوعة وعلي انتقاء المنتجات الأفضل",
   },
   {
-    icon: "fa-regular fa-dollar-sign",
-    header: "وبلا تكلفة إضافية",
-    content:
-      "كافة المنتجات الاستثمارية متاحة بنفس التكلفةالمتاحة عند الاستثمار مع الجهة الاستثمارية مباشرة (اي بدون أي رسوم إضافية).",
-  },
-  {
     icon: "fa-regular fa-face-smile",
     header: "اﻟﺄﻛﺜﺮ راﺣﺔ",
     content:
       "لن تحتاج إلى فتح حسابات متعددة؛ أو حفظ أسماء دخول مختلفة لأن دراية تتيح لك الاستثمار في كافة المنتجات الاستثمارية من مكان واحد، بل أصبح بإمكانك متابعة كل استثماراتك وإدارتها عبر موقع واحد وحساب واحد.",
+  },
+  {
+    icon: "fa-solid fa-layer-group",
+    header: "الأكثر تنويعاً",
+    content:
+      "تمكنك دراية من الاستثمار في أكثر من 60 منتج استثماري من 10 مدراء مختلفين. هذه المنتجات تستثمر في كافة الفئات الاستثمارية (كالأسهم، والصكوك، والمرابحة...إلخ) والأسواق كما يمكنك التداول في ما يزيد عن 1,200 من صناديق المؤشرات المتداولة ETF",
+  },
+  {
+    icon: "fa-regular fa-dollar-sign",
+    header: "وبلا تكلفة إضافية",
+    content:
+      "كافة المنتجات الاستثمارية متاحة بنفس التكلفةالمتاحة عند الاستثمار مع الجهة الاستثمارية مباشرة (اي بدون أي رسوم إضافية).",
   },
   {
     icon: "fa-solid fa-arrow-trend-up",
@@ -24,13 +30,7 @@ var cards = [
       "أصبح من السهل عليك المقارنة بين المنتجات التي تقدمها دراية من خلال حساب موحد بشكل شفاف لانتقاء الأفضل من بينها.",
   },
   {
-    icon: "fa-regular fa-layer-group",
-    header: "الأكثر تنويعاً",
-    content:
-      "تمكنك دراية من الاستثمار في أكثر من 60 منتج استثماري من 10 مدراء مختلفين. هذه المنتجات تستثمر في كافة الفئات الاستثمارية (كالأسهم، والصكوك، والمرابحة...إلخ) والأسواق كما يمكنك التداول في ما يزيد عن 1,200 من صناديق المؤشرات المتداولة ETF",
-  },
-  {
-    icon: "fa-light fa-thumbs-up",
+    icon: "fa-regular fa-thumbs-up",
     header: "الأكثر استقلالية",
     content:
       "دراية تركز على جمع كافة المنتجات الاستثمارية تحت سقف واحد بدلأ من التركيز على بيع منتجات بعينها، الأمر الذي يعطيها قدر أكبر من الاستقلالية والحيادية في تعاملها ومشورتها.",
@@ -39,7 +39,9 @@ var cards = [
 const wrapper = document.getElementById("features-wrapper");
 for (let card of cards) {
   const cardElement = document.createElement("div");
-  cardElement.classList.add("col-12", "col-sm-4");
+  const cardCol = document.createElement("div");
+  cardCol.classList.add("col-12", "col-sm-4");
+  cardElement.classList.add("feature-card");
   const iconWrapper = document.createElement("div");
   const iconElement = document.createElement("i");
   iconElement.className = card.icon;
@@ -49,7 +51,8 @@ for (let card of cards) {
   const contentElement = document.createElement("p");
   contentElement.innerText = card.content;
   cardElement.append(iconWrapper, headerElement, contentElement);
-  wrapper.append(cardElement);
+  cardCol.append(cardElement);
+  wrapper.append(cardCol);
 }
 
 const greenSwitchBtn = document.getElementById("green-switch");

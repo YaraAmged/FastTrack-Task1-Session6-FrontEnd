@@ -18,6 +18,9 @@
   }
 }
 body {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Cairo";
   font-size: 16px;
   --primary-color: #510b76;
 }
@@ -45,7 +48,6 @@ h2 {
 }
 .navbar .nav-link {
   font-weight: 600;
-  font-family: "maxarabic";
   color: black;
 }
 .navbar button {
@@ -80,9 +82,6 @@ h2 {
 }
 .section1 .title-wrapper .title-container {
   width: 651px;
-  font-family: "Cairo";
-  font-style: normal;
-  font-weight: 400;
 }
 .section1 .title-wrapper .title-container h1 {
   font-size: 56px;
@@ -99,7 +98,83 @@ h2 {
   filter: grayscale(100%);
 }
 
-#features-wrapper > div {
+.section2 {
+  margin-top: 77px;
+}
+.section2 .p1 {
+  font-size: 40px;
+}
+.section2 .imagelay {
+  z-index: 3;
+}
+.section2 .underlay {
+  width: 332px;
+  height: 326px;
+  left: calc(47% - 166px - 92px);
+  bottom: -50px;
+  background: #e1d9e6;
+  opacity: 0.3;
+  border-radius: 20px;
+}
+
+.section3 {
+  margin-top: 105px;
+}
+.section3 .card {
+  border: none;
+  border-radius: 0;
+  font-family: "maxarabic";
+  padding: 0;
+  width: 278px;
+  background-color: #fafafa;
+}
+.section3 .card .card-header {
+  border-radius: 0;
+}
+.section3 .card p {
+  margin-top: 30px;
+}
+.section3 .card .title {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+.section3 .card .title h1 {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.section4 {
+  padding: 0;
+  margin-top: 100px;
+  font-size: 18px;
+}
+.section4 div {
+  width: 808px;
+  gap: 26px;
+}
+.section4 div h1 {
+  font-size: 40px;
+}
+
+.wrapper-lay {
+  position: absolute;
+  width: 824px;
+  height: 962px;
+  background-color: #e1d9e6;
+  left: calc(50% - 412px - 33px);
+  top: 20px;
+  border-radius: 30px;
+  opacity: 0.2;
+}
+
+#features-wrapper {
+  position: relative;
+  padding-bottom: 50px;
+  margin-top: 80px;
+  z-index: 3;
+}
+#features-wrapper .feature-card {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -107,8 +182,9 @@ h2 {
   border-radius: 30px;
   height: 426px;
   padding-top: 30px;
+  background: white;
 }
-#features-wrapper > div div {
+#features-wrapper .feature-card div {
   display: flex;
   width: 100px;
   height: 100px;
