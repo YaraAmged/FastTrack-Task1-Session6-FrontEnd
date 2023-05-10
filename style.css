@@ -1,0 +1,121 @@
+@font-face {
+  font-family: "maxarabic";
+  src: url("/font/alfont_com_AlFont_com_TheMixArab-Regular.ttf");
+}
+@font-face {
+  font-family: "cairo";
+  src: url("/font/Cairo-Regular.ttf");
+}
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 5px #ffb802;
+  }
+  50% {
+    box-shadow: 0 0 20px #ffb802;
+  }
+  100% {
+    box-shadow: 0 0 5px #ffb802;
+  }
+}
+body {
+  font-size: 16px;
+  --primary-color: #510b76;
+}
+body.green-theme {
+  --primary-color: #0b760f;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+p,
+h1,
+h2 {
+  margin: 0;
+}
+
+.navbar {
+  width: 100%;
+  font-family: "maxarabic";
+}
+.navbar .navbar-nav {
+  gap: 5px;
+}
+.navbar .nav-link {
+  font-weight: 600;
+  font-family: "maxarabic";
+  color: black;
+}
+.navbar button {
+  font-weight: 700;
+  border-radius: 24px;
+  background-color: var(--primary-color);
+  padding: 8px 42px;
+}
+.navbar button.theme-button {
+  padding: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 100%;
+}
+.navbar button.theme-button.purple-button {
+  background-color: #510b76;
+}
+.navbar button.theme-button.green-button {
+  background-color: #0b760f;
+}
+
+.glowing-button {
+  animation: glowing 1300ms infinite;
+}
+
+.section1 {
+  background-color: var(--primary-color);
+}
+.section1 .title-wrapper {
+  color: #ffffff;
+  height: min(632.14px, 100vh - 100px);
+}
+.section1 .title-wrapper .title-container {
+  width: 651px;
+  font-family: "Cairo";
+  font-style: normal;
+  font-weight: 400;
+}
+.section1 .title-wrapper .title-container h1 {
+  font-size: 56px;
+}
+.section1 .title-wrapper .title-container .p1 {
+  font-size: 20px;
+}
+.section1 .icon {
+  width: 16px;
+  height: 16px;
+}
+.section1 .landing-image {
+  border-bottom-right-radius: 40px;
+  filter: grayscale(100%);
+}
+
+#features-wrapper > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 15px 15px 50px rgba(143, 81, 211, 0.1);
+  border-radius: 30px;
+  height: 426px;
+  padding-top: 30px;
+}
+#features-wrapper > div div {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  background: #faf9f9;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+  font-size: 37px;
+  color: #f58026;
+}/*# sourceMappingURL=style.css.map */

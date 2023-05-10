@@ -1,0 +1,132 @@
+$MaxArabicFont: "maxarabic";
+$Cairo: "cairo";
+$black: #16151a;
+$purple: #510b76;
+$green: #0b760f;
+$white: #ffffff;
+$glowing: #ffb802;
+
+$primary-color: var(--primary-color);
+
+@font-face {
+  font-family: "maxarabic";
+  src: url("/font/alfont_com_AlFont_com_TheMixArab-Regular.ttf");
+}
+@font-face {
+  font-family: "cairo";
+  src: url("/font/Cairo-Regular.ttf");
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 5px $glowing;
+  }
+  50% {
+    box-shadow: 0 0 20px $glowing;
+  }
+  100% {
+    box-shadow: 0 0 5px $glowing;
+  }
+}
+body {
+  font-size: 16px;
+  --primary-color: #{$purple};
+  &.green-theme {
+    --primary-color: #{$green};
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+p,
+h1,
+h2 {
+  margin: 0;
+}
+.navbar {
+  width: 100%;
+  font-family: $MaxArabicFont;
+  .navbar-nav {
+    gap: 5px;
+  }
+  .nav-link {
+    font-weight: 600;
+    font-family: $MaxArabicFont;
+    color: black;
+  }
+
+  button {
+    &.theme-button {
+      padding: 0;
+      width: 46px;
+      height: 46px;
+      border-radius: 100%;
+      &.purple-button{
+        background-color: $purple;
+      }
+      &.green-button {
+        background-color: $green;
+      }
+    }
+
+    font-weight: 700;
+    border-radius: 24px;
+    background-color: $primary-color;
+    padding: 8px 42px;
+  }
+}
+.glowing-button {
+  animation: glowing 1300ms infinite;
+}
+
+.section1 {
+  background-color: $primary-color;
+  .title-wrapper {
+    color: $white;
+    height: min( 632.14px,calc( 100vh - 100px));
+
+    .title-container {
+      width: 651px;
+      font-family: "Cairo";
+      font-style: normal;
+      font-weight: 400;
+      h1 {
+        font-size: 56px;
+      }
+      .p1 {
+        font-size: 20px;
+      }
+    }
+  }
+  .icon {
+    width: 16px;
+    height: 16px;
+  }
+  .landing-image {
+    border-bottom-right-radius: 40px;
+    filter: grayscale(100%);
+  }
+}
+#features-wrapper {
+  & > div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 15px 15px 50px rgba(143, 81, 211, 0.1);
+    border-radius: 30px;
+    height: 426px;
+    padding-top: 30px;
+    div {
+      display: flex;
+      width: 100px;
+      height: 100px;
+      background: #faf9f9;
+      border-radius: 15px;
+      align-items: center;
+      justify-content: center;
+      font-size: 37px;
+      color: #f58026;
+    }
+  }
+}
