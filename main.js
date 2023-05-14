@@ -36,6 +36,8 @@ var cards = [
       "دراية تركز على جمع كافة المنتجات الاستثمارية تحت سقف واحد بدلأ من التركيز على بيع منتجات بعينها، الأمر الذي يعطيها قدر أكبر من الاستقلالية والحيادية في تعاملها ومشورتها.",
   },
 ];
+charlimit = 120;
+paragraphlimit = 300;
 const wrapper = document.getElementById("features-wrapper");
 for (let card of cards) {
   const cardElement = document.createElement("div");
@@ -51,10 +53,25 @@ for (let card of cards) {
   const contentElement = document.createElement("p");
   contentElement.innerText = card.content;
   cardElement.append(iconWrapper, headerElement, contentElement);
+
+  const cardButton = document.createElement("button");
+  cardButton.innerText = "إقرأ المزيد";
+  cardButton.classList.add("card-button", "text-white", "border-0", "rounded");
+
+  if (card.content.length > charlimit) {
+    cardElement.append(cardButton);
+    contentElement.innerText = card.content.slice(0, charlimit);
+  }
+  cardButton.onclick = function () {
+    alert(card.content);
+  };
   cardCol.append(cardElement);
   wrapper.append(cardCol);
 }
-
+const pageContent = document.getElementsByClassName("page-content");
+if (pageContent.innerText.length > paragraphlimit) {
+  pageContent.innerText = pageContent.innerText.slice(0, paragraphlimit);
+}
 const greenSwitchBtn = document.getElementById("green-switch");
 greenSwitchBtn.onclick = function () {
   document.body.classList.add("green-theme");
