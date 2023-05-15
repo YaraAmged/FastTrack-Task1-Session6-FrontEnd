@@ -39,6 +39,7 @@ var cards = [
 charlimit = 120;
 paragraphlimit = 300;
 const wrapper = document.getElementById("features-wrapper");
+
 for (let card of cards) {
   const cardElement = document.createElement("div");
   const cardCol = document.createElement("div");
@@ -62,16 +63,25 @@ for (let card of cards) {
     cardElement.append(cardButton);
     contentElement.innerText = card.content.slice(0, charlimit);
   }
-  cardButton.onclick = function () {
-    alert(card.content);
-  };
+  const popup = document.createElement("div");
+  popup.classList.add("popup")
+  const closeButton = document.createElement("span");
+  closeButton.setAttribute = ("id", "closeButton");
+  closeButton.innerText = "X";
+  popup.append(closeButton, card.content);
+
+  // cardButton.onclick = function () {
+  //   alert(card.content);
+  // };
   cardCol.append(cardElement);
   wrapper.append(cardCol);
 }
-const pageContent = document.getElementsByClassName("page-content");
+const pageContent = document.getElementById("page-content");
 if (pageContent.innerText.length > paragraphlimit) {
-  pageContent.innerText = pageContent.innerText.slice(0, paragraphlimit);
+  pageContent.innerText =
+    pageContent.innerText.slice(0, paragraphlimit) + "........";
 }
+
 const greenSwitchBtn = document.getElementById("green-switch");
 greenSwitchBtn.onclick = function () {
   document.body.classList.add("green-theme");
