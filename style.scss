@@ -208,23 +208,19 @@ h2 {
     padding: 5px;
   }
 }
-#closeButton{
-  padding:2px 5px;
-  background:red;
-  :hover{
-    padding:2px 5px;
-    background:#ccc;
-    color:black;
-  }
-}
-.popup{
-  background: #ffb802;
+
+.popup {
+  background: $primary-color;
   border-radius: 6px;
-  position: absolute;
+  position: fixed;
   top: 50%;
-  left: -50px;
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 472px;
-  height: 400px;
+  height: 300px;
+  color: #ffffff;
+}
+.scroll-lock{
+  overflow: hidden;
 }
 

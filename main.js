@@ -64,17 +64,26 @@ for (let card of cards) {
     contentElement.innerText = card.content.slice(0, charlimit);
   }
   const popup = document.createElement("div");
-  popup.classList.add("popup")
-  const closeButton = document.createElement("span");
+  popup.classList.add("popup", "d-none");
+  const closeButton = document.createElement("button");
   closeButton.setAttribute = ("id", "closeButton");
+  const popupContent = document.createElement("div");
+  popupContent.classList.add("d-flex", "gap-4", "mt-4", "mb-3");
+  const popuptitle = card.header;
   closeButton.innerText = "X";
-  popup.append(closeButton, card.content);
+  popupContent.append(closeButton, popuptitle);
+  popup.append(popupContent, card.content);
 
-  // cardButton.onclick = function () {
-  //   alert(card.content);
-  // };
+  cardButton.onclick = function () {
+    popup.classList.remove("d-none");
+    document.body.classList.add("scroll-lock");
+  };
+  closeButton.onclick = function () {
+    popup.classList.add("d-none");
+    document.body.classList.remove("scroll-lock");
+  };
   cardCol.append(cardElement);
-  wrapper.append(cardCol);
+  wrapper.append(cardCol, popup);
 }
 const pageContent = document.getElementById("page-content");
 if (pageContent.innerText.length > paragraphlimit) {
